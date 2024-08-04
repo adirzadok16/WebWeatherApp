@@ -107,6 +107,6 @@ function showImage() {
   const weatherIcon = document.getElementById("weather-icon");
   weatherIcon.style.display = "block"; // Make the image visible once it's loaded
   weatherIcon.classList.remove("animate");
-  void weatherIcon.offsetWidth; // Trigger reflow
+  weatherIcon.offsetWidth; // For refreshing the page , make the animation smoother
   weatherIcon.classList.add("animate");
 }

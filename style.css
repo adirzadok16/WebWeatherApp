@@ -1,0 +1,152 @@
+*{
+ margin : 0;
+ padding: 0;
+ font : uppercase;
+ font-weight: bold;
+ box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+h2{
+    color : rgb(255, 158, 3)
+}
+
+.weather-container{
+     background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    border: 7px solid black;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 8px 32px rgba(227, 221, 221, 0.1);
+    font-size: 30px;
+    color: white;
+    position: relative;
+    width:550px;
+    transition: width 0.8s ease, height 1s ease 1s;
+    box-sizing: border-box;
+}
+
+.weather-container.grown {
+    width: 1400px;
+    height: 800px;
+}
+
+button {
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100px;
+    font-size: 17px;
+    background-color : rgb(245, 151, 0);
+}
+
+button:hover {
+    background: #a26930;
+    transition: 0.5s;
+}
+
+
+#city{
+    /*background:rgb(248, 161, 47);*/
+    background: none;
+    font-size: 20px;                 
+    font-weight: bold;               
+    color : rgb(245, 151, 0);
+    padding: 10px;                   
+    border: 5px solid #000000;          
+    border-radius: 50px;   
+    width : 500px;
+    display: block;
+    margin: auto;
+    margin-top: 20px;   
+    font : uppercase; 
+}
+
+#city[type="text"]{
+    text-align: center;
+}
+
+#city::placeholder {
+    color: orange !important;
+}
+
+.hourly-item{
+    margin-top: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex : 0 0 auto;
+    width: 100px;
+    padding: 10px;
+    margin-right: 30px;
+    margin-left: 30px;
+    opacity: 1;
+    animation: fiden 4s linear;
+    
+}
+
+#hourly-forecast{
+    transition-delay: 0s,2s;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    margin : 30px;
+    position: absolute;
+}
+
+#weather-icon {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto ; 
+    display: none;  
+}
+
+#weather-info p , #temp-div p {
+    opacity: 1;
+    animation: fiden 4s linear;
+}
+
+#weather-icon{
+    z-index: 1;
+}
+
+.animate {
+    animation: bringToFront 3s forwards;
+}
+
+@keyframes fiden{
+    from {opacity: 0;}
+}
+
+@keyframes bringToFront {
+    0% {
+      transform: scale(0.5);
+      z-index: 1;
+    }
+    50% {
+      transform: scale(1);
+      z-index: 1;
+    }
+    75% {
+        transform: scale(1.5);
+        z-index: 1;
+      }
+}
+
